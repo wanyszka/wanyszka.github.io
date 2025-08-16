@@ -46,7 +46,7 @@ params:
   profileMode:
     enabled: true
     title: "Wojciech Anyszka"  # We'll make this LaTeX-style next
-    subtitle: "PhD Student in [Your Field] at [University]"
+    subtitle: "PhD Student at Princeton University"
     imageUrl: "/images/profile.jpeg"  # Update filename to match yours
     imageWidth: 150
     imageHeight: 150
