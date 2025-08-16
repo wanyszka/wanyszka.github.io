@@ -1,6 +1,6 @@
-baseURL: "https://yourusername.github.io/my-academic-site"
+baseURL: "https://wanyszka.github.io"
 languageCode: "en-us"
-title: "Your Name - Academic Website"
+title: "Wojciech Anyszka"
 theme: "PaperMod"
 
 
@@ -18,10 +18,10 @@ minify:
 
 params:
   env: production
-  title: "Your Name"
+  title: "Wojciech Anyszka"
   description: "Academic website and blog"
   keywords: [Academic, Research, Blog, Publications]
-  author: "Your Name"
+  author: "Wojciech Anyszka"
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light, auto
   disableThemeToggle: false
@@ -41,14 +41,24 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: false
+  math: true
 
-  # home-info mode (good for academic sites)
-  homeInfoParams:
-    Title: "Your Name"
-    Content: |
-      PhD Student in [Your Field] at [University]
-      
-      Welcome to my academic website where I share my research and thoughts.
+  profileMode:
+    enabled: true
+    title: "Wojciech Anyszka"  # We'll make this LaTeX-style next
+    subtitle: "PhD Student in [Your Field] at [University]"
+    imageUrl: "/images/profile.jpeg"  # Update filename to match yours
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Wojciech Anyszka"
+    buttons:
+      - name: About
+        url: /about
+      - name: Publications  
+        url: /publications
+      - name: CV
+        url: /cv
+  
 
   # Social icons for academic profiles
   socialIcons:
