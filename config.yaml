@@ -1,6 +1,6 @@
 baseURL: "https://wanyszka.github.io"
 languageCode: "en-us"
-title: "Wojciech Anyszka"
+title: \(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)
 theme: "PaperMod"
 
 
@@ -41,19 +41,21 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: false
-  math: true
+  
 
   profileMode:
     enabled: true
-    title: "Wojciech Anyszka"  # We'll make this LaTeX-style next
+    title: <h1>\(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)</h1>  # We'll make this LaTeX-style next
     subtitle: "PhD Student at Princeton University"
     imageUrl: "/images/profile.jpeg"  # Update filename to match yours
-    imageWidth: 150
-    imageHeight: 150
+    imageWidth: 300
+    imageHeight: 300
     imageTitle: "Wojciech Anyszka"
     buttons:
       - name: About
         url: /about
+      - name: Blog
+        url: /posts
       - name: Publications  
         url: /publications
       - name: CV
@@ -63,15 +65,13 @@ params:
   # Social icons for academic profiles
   socialIcons:
     - name: github
-      url: "https://github.com/yourusername"
+      url: "https://github.com/wanyszka"
     - name: googlescholar
-      url: "https://scholar.google.com/citations?user=YOURID"
-    - name: orcid
-      url: "https://orcid.org/0000-0000-0000-0000"
+      url: "https://scholar.google.com/citations?user=EIPsNbUAAAAJ"
     - name: linkedin
-      url: "https://linkedin.com/in/yourusername"
+      url: "https://linkedin.com/in/wojciech-anyszka"
     - name: email
-      url: "mailto:your.email@university.edu"
+      url: "mailto:wojtek.anyszka@gmail.com"
 
   # For search functionality
   fuseOpts:
@@ -112,3 +112,6 @@ markup:
     guessSyntax: true
     lineNos: true
     style: github
+  goldmark:
+    renderer:
+      unsafe: true
