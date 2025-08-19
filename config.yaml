@@ -12,6 +12,12 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
 minify:
   disableXML: true
   minifyOutput: true
@@ -59,7 +65,7 @@ params:
       - name: Publications  
         url: /publications
       - name: CV
-        url: /cv
+        url: /cv.pdf
   
 
   # Social icons for academic profiles
@@ -100,8 +106,12 @@ menu:
       weight: 30
     - identifier: cv
       name: CV
-      url: /cv/
+      url: /cv.pdf/
       weight: 40
+    # - identifier: search
+    #   name: Search
+    #   url: /search/
+    #   weight: 50
 
 # Syntax highlighting
 markup:
