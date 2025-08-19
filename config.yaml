@@ -1,6 +1,6 @@
 baseURL: "https://wanyszka.github.io"
 languageCode: "en-us"
-title: \(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)
+title: Wojciech Anyszka
 theme: "PaperMod"
 
 
@@ -18,7 +18,7 @@ minify:
 
 params:
   env: production
-  title: "Wojciech Anyszka"
+  title: \(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)
   description: "Academic website and blog"
   keywords: [Academic, Research, Blog, Publications]
   author: "Wojciech Anyszka"
