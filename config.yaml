@@ -106,7 +106,7 @@ menu:
       weight: 30
     - identifier: cv
       name: CV
-      url: /cv.pdf/
+      url: /cv.pdf
       weight: 40
     # - identifier: search
     #   name: Search
