@@ -31,14 +31,18 @@ params:
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light, auto
   disableThemeToggle: false
+  customCSS: ["css/custom.css"]
+  customJS: []
+  customCSS: ["css/custom.css"]
+  customJS: []
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -59,9 +63,9 @@ params:
     imageTitle: "Wojciech Anyszka"
     buttons:
       - name: About
-        url: /about
+        url: /about/
       - name: Blog
-        url: /posts
+        url: /blog/
       - name: Publications  
         url: /publications
       - name: CV
@@ -98,7 +102,7 @@ menu:
       weight: 10
     - identifier: posts
       name: Blog
-      url: /posts/
+      url: /blog/
       weight: 20
     - identifier: publications
       name: Publications

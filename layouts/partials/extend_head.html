@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Apply Lora to specific elements only, not everything */
+body, html, p, h1, h2, h3, h4, h5, h6, li, td, th, div, span, a {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Don't apply to math elements */
+.MathJax, .katex, .math, [class*="math"], script[type*="math"] {
+    font-family: inherit !important;
+}
+
+/* Specifically preserve your LaTeX title */
+.profileMode .title, .profileMode h1 {
+    font-family: inherit !important;
+}
+
+.publication-actions {
+    margin: -1.5rem -0.5rem !important;
+    border-collapse: separate !important;
+    border-spacing: 0.5rem !important;
+}
+
+.publication-actions td {
+    padding: 0 !important;
+}
+/* Action buttons */
+.action-btn {
+    display: inline-block !important;
+    padding: 0.2rem 0.8rem !important;
+    background-color: #333 !important;
+    color: #eaeaeb !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 0.9rem !important;
+    cursor: pointer !important;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+    transition: background-color 0.2s !important;
+    text-align: center !important;
+    min-width: 80px !important;
+}
+
+
+
+.action-btn:hover {
+    background-color: #555 !important;
+    text-decoration: none !important;
+}
+/* Expandable content */
+.expandable-content {
+    margin: 1rem 0 !important;
+    padding: 1rem !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid #444 !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    line-height: 1.6 !important;
+}
+
+</style>
+
+<script>
+    function toggleContent(id) {
+    // Get the current publication section
+    var currentSection = document.getElementById(id).closest('.publication-section') || document.getElementById(id).parentElement;
+    
+    // Find all expandable content in the same publication section
+    var allContents = currentSection.querySelectorAll('.expandable-content');
+    
+    // Close all other expandable contents in this section
+    allContents.forEach(function(content) {
+        if (content.id !== id) {
+            content.style.display = "none";
+        }
+    });
+    
+    // Toggle the clicked content
+    var content = document.getElementById(id);
+    if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
+    function downloadFile(url) {
+    window.open(url, '_blank');
+}
+</script>

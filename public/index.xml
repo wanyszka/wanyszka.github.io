@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Your Name - Academic Website</title>
-    <link>http://localhost:1313/my-academic-site/</link>
-    <description>Recent content on Your Name - Academic Website</description>
+    <title>Wojciech Anyszka</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Wojciech Anyszka</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Aug 2025 12:44:28 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/my-academic-site/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
-      <link>http://localhost:1313/my-academic-site/blog/welcome/</link>
+      <link>http://localhost:1313/blog/welcome/</link>
       <pubDate>Sat, 16 Aug 2025 12:44:28 +0200</pubDate>
-      <guid>http://localhost:1313/my-academic-site/blog/welcome/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Publications</title>
-      <link>http://localhost:1313/my-academic-site/publications/</link>
-      <pubDate>Sat, 16 Aug 2025 12:43:58 +0200</pubDate>
-      <guid>http://localhost:1313/my-academic-site/publications/</guid>
-      <description></description>
+      <guid>http://localhost:1313/blog/welcome/</guid>
+      <description>&lt;p&gt;Welcome to my blog!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
