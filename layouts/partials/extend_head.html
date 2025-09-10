@@ -58,9 +58,82 @@ body, html, p, h1, h2, h3, h4, h5, h6, li, td, th, div, span, a {
     line-height: 1.6 !important;
 }
 
+/* Specifically preserve your LaTeX title */
+.profileMode .title, .profileMode h1 {
+    font-family: inherit !important;
+}
+
+/* Fix profile image distortion - more aggressive approach */
+.profile-mode img,
+.home-info img,
+.profile-img,
+img[src*="profile"],
+img[alt*="profile"],
+.profile-mode .profile-img,
+.profile-mode img[width="300"],
+.profile-mode img[height="300"] {
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 50% !important;
+    width: 300px !important;
+    height: 300px !important;
+    aspect-ratio: 1/1 !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+    min-width: 300px !important;
+    min-height: 300px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
 </style>
 
 <script>
+    // Array of profile images
+    const profileImages = [
+        '/images/profile.jpeg',
+        '/images/profile2.jpeg',
+    ];
+    
+    // Function to get random image
+function getRandomProfileImage() {
+    const randomIndex = Math.floor(Math.random() * profileImages.length);
+    return profileImages[randomIndex];
+}
+
+// Change profile image on page load - try multiple selectors
+document.addEventListener('DOMContentLoaded', function() {
+    // Try multiple possible selectors for the profile image
+    const selectors = [
+        '.profile-mode img',
+        '.home-info img', 
+        '.profile-img',
+        'img[alt*="profile"]',
+        'img[src*="profile"]',
+        '.profile-mode .profile-img',
+        'img[width="300"]'
+    ];
+    
+    let profileImg = null;
+    for (let selector of selectors) {
+        profileImg = document.querySelector(selector);
+        if (profileImg) {
+            console.log('Found profile image with selector:', selector);
+            break;
+        }
+    }
+    
+    if (profileImg) {
+        profileImg.src = getRandomProfileImage();
+        console.log('Profile image changed to:', profileImg.src);
+    } else {
+        console.log('Profile image not found');
+    }
+});
+</script>
+
+<script>
+    
     function toggleContent(id) {
     // Get the current publication section
     var currentSection = document.getElementById(id).closest('.publication-section') || document.getElementById(id).parentElement;
