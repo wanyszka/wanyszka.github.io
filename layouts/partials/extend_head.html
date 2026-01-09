@@ -86,6 +86,36 @@ img[alt*="profile"],
     margin: 0 auto !important;
 }
 
+/* Hide LaTeX notation until MathJax renders it */
+.logo a, .profile_inner h1 {
+    visibility: hidden;
+}
+
+/* Show after MathJax is ready (set by MathJax config below) */
+.mathjax-ready .logo a,
+.mathjax-ready .profile_inner h1 {
+    visibility: visible;
+}
+
 </style>
+
+<!-- MathJax configuration to prevent FOUC -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  startup: {
+    ready: () => {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(() => {
+        // Add class to body when MathJax is done rendering
+        document.body.classList.add('mathjax-ready');
+      });
+    }
+  }
+};
+</script>
 
 <script defer src="/js/custom.js"></script>
