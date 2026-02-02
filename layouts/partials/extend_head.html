@@ -1,8 +1,45 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400..600&family=IM+Fell+English:ital@0;1&display=swap">
 <style>
-/* Apply Lora to specific elements only, not everything */
+:root {
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-dropcap: 'Source Serif 4', serif;
+    --link: #2f6fdd;
+    --link-hover: #1f57b8;
+    --link-underline: color-mix(in srgb, var(--link) 45%, transparent);
+}
+
+.dark {
+    --link: #6fa8ff;
+    --link-hover: #8fbfff;
+    --link-underline: color-mix(in srgb, var(--link) 40%, transparent);
+}
+
+/* Apply Source Serif 4 to body text */
 body, html, p, h1, h2, h3, h4, h5, h6, li, td, th, div, span, a {
-    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Drop cap: first letter of first paragraph in blog posts only */
+article.post-single .post-content > p:first-of-type::first-letter {
+    font-family: var(--font-dropcap);
+    float: left;
+    font-size: 4.3em;
+    line-height: 0.5;
+    padding-right: 0.12em;
+    padding-top: 0.06em;
+    font-weight: 600;
+    opacity: 0.75;
+    color: var(--primary);
+}
+
+/* Mobile adjustment for drop caps */
+@media (max-width: 600px) {
+    article.post-single .post-content > p:first-of-type::first-letter {
+        font-size: 3.2em;
+        line-height: 0.95;
+    }
 }
 
 /* Don't apply to math elements */
@@ -35,7 +72,7 @@ body, html, p, h1, h2, h3, h4, h5, h6, li, td, th, div, span, a {
     border-radius: 4px !important;
     font-size: 0.9rem !important;
     cursor: pointer !important;
-    font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+    font-family: var(--font-body) !important;
     transition: background-color 0.2s !important;
     text-align: center !important;
     min-width: 80px !important;
@@ -51,16 +88,11 @@ body, html, p, h1, h2, h3, h4, h5, h6, li, td, th, div, span, a {
 .expandable-content {
     margin: 2rem 0 !important;
     padding: 1rem !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid #444 !important;
+    background-color: var(--code-bg) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 6px !important;
-    color: #ffffff !important;
+    color: var(--content) !important;
     line-height: 1.6 !important;
-}
-
-/* Specifically preserve your LaTeX title */
-.profileMode .title, .profileMode h1 {
-    font-family: inherit !important;
 }
 
 /* Fix profile image distortion - more aggressive approach */
@@ -95,6 +127,117 @@ img[alt*="profile"],
 .mathjax-ready .logo a,
 .mathjax-ready .profile_inner h1 {
     visibility: visible;
+}
+
+/* =========================
+   Links + Footnotes
+   ========================= */
+
+/* Base: remove all native underlines (theme uses box-shadow) */
+.post-content a {
+    text-decoration: none !important;
+    box-shadow: none !important; /* Override theme's underline */
+    color: var(--link) !important;
+    opacity: 0.95;
+    position: relative;
+    transition: color 0.15s;
+}
+
+/* Underline via pseudo-element (allows position control) */
+.post-content a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.08em; /* shift underline up */
+    height: 1px;
+    background: var(--link-underline);
+    transition: background 0.15s, height 0.15s;
+}
+
+.post-content a:hover {
+    color: var(--link-hover) !important;
+}
+
+.post-content a:hover::after {
+    background: var(--link-hover);
+    height: 2px;
+}
+
+/* Footnote refs [1] - NO underline */
+sup[id^="fnref"] {
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: super;
+    margin-left: 0.06em;
+}
+
+sup[id^="fnref"] a,
+sup[id^="fnref"] a:hover {
+    position: static;
+    box-shadow: none !important;
+    padding: 0 0.18em;
+    border-radius: 0.35em;
+    opacity: 0.85;
+    transition: background 0.15s, opacity 0.15s;
+}
+
+sup[id^="fnref"] a::after,
+sup[id^="fnref"] a:hover::after {
+    display: none !important;
+}
+
+sup[id^="fnref"] a:hover {
+    background: color-mix(in srgb, var(--link) 15%, transparent);
+    opacity: 1;
+}
+
+/* Footnotes block at bottom */
+.footnotes {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    font-size: 0.92em;
+    opacity: 0.9;
+}
+
+.footnotes > hr {
+    border: 0;
+    height: 1px;
+    background: color-mix(in srgb, currentColor 18%, transparent);
+    margin: 0 0 1.2rem 0;
+}
+
+.footnotes ol {
+    padding-left: 1.25em;
+    margin: 0;
+}
+
+.footnotes li {
+    margin: 0.7em 0;
+}
+
+.footnotes li p {
+    margin: 0.25em 0;
+}
+
+/* Footnote backlinks (↩︎) - NO underline */
+a.footnote-backref,
+a.footnote-backref:hover {
+    position: static;
+    box-shadow: none !important;
+    margin-left: 0.4em;
+    opacity: 0.5;
+    font-size: 0.9em;
+    transition: opacity 0.15s;
+}
+
+a.footnote-backref::after,
+a.footnote-backref:hover::after {
+    display: none !important;
+}
+
+a.footnote-backref:hover {
+    opacity: 1;
 }
 
 </style>
