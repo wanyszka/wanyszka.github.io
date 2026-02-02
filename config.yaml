@@ -24,7 +24,7 @@ minify:
 
 params:
   env: production
-  title: \(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)
+  title: '\(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)'
   description: "Academic website and blog"
   keywords: [Academic, Research, Blog, Publications]
   author: "Wojciech Anyszka"
@@ -55,21 +55,21 @@ params:
 
   profileMode:
     enabled: true
-    title: <h1>\(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)</h1>  # We'll make this LaTeX-style next
+    title: '<h1>\(\mathbb{W}\text{ojciech }\mathbb{A}\text{nyszka}\)</h1>'
     subtitle: "PhD Student at Princeton University"
     imageUrl: "/images/profile.jpeg"  # Update filename to match yours
     imageWidth: 300
     imageHeight: 300
     imageTitle: "Wojciech Anyszka"
-    buttons:
-      - name: About
-        url: /about/
-      - name: Blog
-        url: /blog/
-      - name: Publications  
-        url: /publications
-      - name: CV
-        url: /cv.pdf
+    # buttons:
+    #   - name: About
+    #     url: /about/
+    #   - name: Blog
+    #     url: /blog/
+    #   - name: Publications  
+    #     url: /publications
+    #   - name: CV
+    #     url: /cv.pdf
   
 
   # Social icons for academic profiles
@@ -96,6 +96,10 @@ params:
 
 menu:
   main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
     - identifier: about
       name: About
       url: /about/

@@ -42,9 +42,12 @@ article.post-single .post-content > p:first-of-type::first-letter {
     }
 }
 
-/* Don't apply to math elements */
-.MathJax, .katex, .math, [class*="math"], script[type*="math"] {
-    font-family: inherit !important;
+/* Don't apply custom font to KaTeX math elements */
+.katex, .katex * {
+    font-family: KaTeX_Main, KaTeX_Math, "Times New Roman", serif !important;
+}
+.katex .mathbb {
+    font-family: KaTeX_AMS !important;
 }
 
 /* Specifically preserve your LaTeX title */
@@ -240,25 +243,54 @@ a.footnote-backref:hover {
     opacity: 1;
 }
 
+/* Navigation font size (global) */
+#menu a {
+    font-size: 18px; /* default is 16px */
+}
+
+/* =========================
+   Mobile Layout
+   ========================= */
+@media (max-width: 768px) {
+    /* Header: split into two centered rows */
+    .nav {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0.5rem 0;
+    }
+
+    #menu {
+        width: 100%;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0rem 0;
+    }
+}
+
 </style>
 
-<!-- MathJax configuration to prevent FOUC -->
+<!-- KaTeX (faster than MathJax) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <script>
-MathJax = {
-  tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']]
-  },
-  startup: {
-    ready: () => {
-      MathJax.startup.defaultReady();
-      MathJax.startup.promise.then(() => {
-        // Add class to body when MathJax is done rendering
-        document.body.classList.add('mathjax-ready');
-      });
-    }
-  }
-};
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+        ],
+        throwOnError: false
+    });
+    document.body.classList.add('mathjax-ready');
+});
 </script>
 
 <script defer src="/js/custom.js"></script>
