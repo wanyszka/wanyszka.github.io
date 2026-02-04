@@ -52,6 +52,40 @@ Papers listed by type and year of publication or year of submission if unpublish
 
 ## Theses
 
+### [Investigating Stationarity Properties of the Signature Transform](/Oxford_dissertation.pdf)
+
+**Type:** MSc dissertation (Mathematical Sciences)  
+**Adviser:** [Zhongmin Qian](https://www.maths.ox.ac.uk/people/zhongmin.qian)  
+**Institution:** University of Oxford
+
+<table class="publication-actions">
+<tr>
+<td><button class="action-btn" onclick="toggleContent('abstract_thesis_msc')">Abstract</button></td>
+<td><button class="action-btn" onclick="toggleContent('bibtex_thesis_msc')">BibTeX</button></td>
+<td><button class="action-btn" onclick="downloadFile('/Oxford_dissertation.pdf')">Download</button></td>
+</tr>
+</table>
+
+<div id="abstract_thesis_msc" class="expandable-content" style="display: none;">
+<strong>Abstract:</strong><br>
+The signature transform, a mathematical tool rooted in rough path theory, has gained prominence in machine learning due to its ability to extract informative features from time series data. This dissertation investigates the predictive utility of sliding signatures derived from stationary processes. We establish a novel theoretical result: the sliding signature transform preserves stationarity. Empirically, we confirm that log increments of foreign exchange prices are stationary, consistent with the Black–Scholes model, and demonstrate that sliding signatures of these increments retain stationarity in 51.3% of multidimensional cases and 93.0% of individual components. Predictive experiments indicate that models employing sliding signatures of log increments provide marginal improvements over those trained on raw prices. Although these signature-based models achieve low mean squared error and near-perfect R² values, their practical profitability is limited due to minimal returns and high variability. These findings suggest that while signature transforms offer theoretical and statistical advantages, translating these into meaningful practical outcomes remains challenging, highlighting the need for further research into their real-world applicability.
+</div>
+
+<div id="bibtex_thesis_msc" class="expandable-content" style="display: none;">
+<strong>BibTeX:</strong><br>
+<pre><code>@mastersthesis{anyszka_signature_stationarity,
+  title   = {Investigating Stationarity Properties of the Signature Transform},
+  author  = {Anyszka, Wojciech},
+  school  = {University of Oxford},
+  type    = {MSc Dissertation in Mathematical Sciences},
+  advisor = {Qian, Zhongmin}
+}</code></pre>
+</div>
+
+---
+
+
+
 
 ### [The Kepler Problem and Its Relation to Extremal Black Holes](https://fse.studenttheses.ub.rug.nl/31614/)
 
@@ -87,7 +121,7 @@ This thesis explores the unique properties of the classical Kepler problem, incl
 ### [Towards an Approximation Theory of Observable Operator Models](https://arxiv.org/abs/2404.12070)
 
 **Type:** BSc thesis (Artificial Intelligence)  
-**Advisers:** [Herbert Jaeger](https://scholar.google.com/citations?user=0uztVbMAAAAJ&hl=de)  
+**Adviser:** [Herbert Jaeger](https://scholar.google.com/citations?user=0uztVbMAAAAJ&hl=de)  
 **Institution:** University of Groningen
 
 <table class="publication-actions">
