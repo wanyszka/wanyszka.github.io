@@ -20,13 +20,13 @@ Papers listed by type and year of publication or year of submission if unpublish
 ### [Tighter performance theory of FedExProx](https://arxiv.org/abs/2410.15368)
 
 **Authors:** **Wojciech Anyszka**, Kaja Gruntkowska, Alexander Tyurin, Peter Richtárik  
-**Source:** arXiv:2410.15368, 2024.
+_International Conference on Learning Representations, 2026_
 
 <table class="publication-actions">
 <tr>
 <td><button class="action-btn" onclick="toggleContent('abstract1')">Abstract</button></td>
 <td><button class="action-btn" onclick="toggleContent('bibtex1')">BibTeX</button></td>
-<td><button class="action-btn" onclick="downloadFile('https://arxiv.org/pdf/2410.15368')">Download</button></td>
+<td><button class="action-btn" onclick="downloadFile('https://proceedings.iclr.cc/paper_files/paper/2026/file/5dc90c91384e962d4b3d64f482a9f41e-Paper-Conference.pdf')">Download</button></td>
 </tr>
 </table>
 
@@ -37,14 +37,13 @@ Papers listed by type and year of publication or year of submission if unpublish
 
 <div id="bibtex1" class="expandable-content" style="display: none;">
 <strong>BibTeX:</strong><br>
-<pre><code>@misc{anyszka2024tighterperformancetheoryfedexprox,
-      title={Tighter Performance Theory of FedExProx},
-      author={Wojciech Anyszka and Kaja Gruntkowska and Alexander Tyurin and Peter Richtárik},
-      year={2024},
-      eprint={2410.15368},
-      archivePrefix={arXiv},
-      primaryClass={math.OC},
-      url={https://arxiv.org/abs/2410.15368},
+<pre><code>@inproceedings{anyszka2026tighter,
+  title     = {Tighter Performance Theory of {FedExProx}},
+  author    = {Anyszka, Wojciech and Gruntkowska, Kaja and Tyurin, Alexander and Richt{\'a}rik, Peter},
+  booktitle = {International Conference on Learning Representations},
+  volume    = {2026},
+  pages     = {57131--57175},
+  year      = {2026}
 }</code></pre>
 </div>
 
