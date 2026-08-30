@@ -61,6 +61,9 @@ params:
     imageWidth: 300
     imageHeight: 300
     imageTitle: "Wojciech Anyszka"
+    buttons:
+      - name: Give me feedback
+        url: /feedback/
     # buttons:
     #   - name: About
     #     url: /about/
@@ -116,6 +119,10 @@ menu:
       name: CV
       url: /cv.pdf
       weight: 40
+    - identifier: feedback
+      name: Feedback
+      url: /feedback/
+      weight: 50
     # - identifier: search
     #   name: Search
     #   url: /search/

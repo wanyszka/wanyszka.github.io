@@ -87,6 +87,26 @@ article.post-single .post-content > p:first-of-type::first-letter {
     background-color: #555 !important;
     text-decoration: none !important;
 }
+
+/* Feedback CTA (content/feedback) */
+.feedback-cta {
+    display: block !important;
+    width: max-content;
+    max-width: 100%;
+    margin: 2rem auto !important;
+    padding: 0.8rem 1.6rem !important;
+    font-size: 1.15rem !important;
+}
+
+/* Light mode: match PaperMod's own .button (home-page buttons) instead of a black block */
+body:not(.dark) .feedback-cta {
+    background-color: var(--tertiary) !important;
+    color: var(--primary) !important;
+}
+
+body:not(.dark) .feedback-cta:hover {
+    background-color: rgb(196, 196, 196) !important;
+}
 /* Expandable content */
 .expandable-content {
     margin: 2rem 0 !important;
