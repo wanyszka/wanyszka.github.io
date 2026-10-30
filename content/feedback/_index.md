@@ -9,7 +9,7 @@ ShowWordCount: false
 hidemeta: true
 ---
 
-Anything about me you think I should hear? How I talk, how I teach, how I write, how I treat people, how my breath smells, something I'm blind to. Nice things are welcome too!
+Anything about me you think I should hear? How I talk, how I teach, how I write, how I treat people, something I'm blind to. Nice things are welcome too!
 
 
 <a class="action-btn feedback-cta" href="https://admonymous.co/anyszka" target="_blank" rel="noopener noreferrer">Leave anonymous feedback &rarr;</a>
