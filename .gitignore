@@ -10,3 +10,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 nul
+
+# ORF 309 course materials (never publish): only the study site in ORF309subpage/site is tracked
+ORF309subpage/course_files_export*/

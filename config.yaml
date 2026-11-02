@@ -3,6 +3,15 @@ languageCode: "en-us"
 title: Wojciech Anyszka
 theme: "PaperMod"
 
+# Unlisted static subsites. The ORF 309 study site lives in ORF309subpage/site and is
+# served as-is at /orf309-studio-k9v2t/ (no menu entry, noindex; share the URL directly).
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: ORF309subpage/site
+      target: static/orf309-studio-k9v2t
+
 
 pagination:
   pagerSize: 5
